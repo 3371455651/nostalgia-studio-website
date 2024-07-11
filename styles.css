@@ -1,0 +1,19 @@
+/* 定义CSS变量 */
+:root {
+    --primary-bg-color: #ffffff; /* 浅色主题背景色 */
+    --primary-text-color: #333333; /* 浅色主题文字色 */
+    --secondary-bg-color: #34495e; /* 暗色主题背景色 */
+    --secondary-text-color: #ecf0f1; /* 暗色主题文字色 */
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 暗色主题样式 */
+body.dark-theme {
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-text-color);
+}
