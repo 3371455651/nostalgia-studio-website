@@ -1,19 +1,68 @@
-/* 定义CSS变量 */
-:root {
-    --primary-bg-color: #ffffff; /* 浅色主题背景色 */
-    --primary-text-color: #333333; /* 浅色主题文字色 */
-    --secondary-bg-color: #34495e; /* 暗色主题背景色 */
-    --secondary-text-color: #ecf0f1; /* 暗色主题文字色 */
-}
-
-body {
+/* 导航栏样式 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
-    transition: background-color 0.3s, color 0.3s;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 轻微的阴影增加层次感 */
 }
 
-/* 暗色主题样式 */
-body.dark-theme {
-    background-color: var(--secondary-bg-color);
-    color: var(--secondary-text-color);
+.logo a {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--secondary-bg-color); /* 鼠标悬停时改变颜色 */
+}
+
+.theme-switcher {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.theme-switcher:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* 鼠标悬停时的背景色变化 */
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-bg-color);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .theme-switcher {
+        display: none; /* 移动端隐藏主题切换按钮，或使用其他方式展示 */
+    }
 }
